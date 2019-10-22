@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="26cddbf5-fb87-4088-ab5d-ecab469e7af6"
+    Name="967528a8-f3de-41bf-82e3-610da7ab8aae"
     Publisher="CN=JR"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="26cddbf5-fb87-4088-ab5d-ecab469e7af6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="967528a8-f3de-41bf-82e3-610da7ab8aae" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>BrnoParkingIS</DisplayName>
