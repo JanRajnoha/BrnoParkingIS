@@ -9,6 +9,24 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <RelativePanel VerticalAlignment="Center"
+                       HorizontalAlignment="Center">
 
+            <TextBlock x:Name="Title"
+                       Text="Brno Parking IS"
+                       FontSize="80"
+                       FontWeight="Bold"/>
+
+            <TextBlock x:Name="Desc1"
+                       Text="Sample app for framework ISUF available on GitHub and NuGet"
+                       FontSize="20"
+                       Margin="0 50 0 20"
+                       RelativePanel.Below="Title"/>
+
+            <TextBlock Text="Next updates will come with updates for ISUF"
+                       FontSize="20"
+                       RelativePanel.Below="Desc1"/>
+
+        </RelativePanel>
     </Grid>
 </Page>
