@@ -165,7 +165,10 @@
       <Version>2.0.6</Version>
     </PackageReference>
     <PackageReference Include="ISUF.Storage">
-      <Version>0.3.13-beta</Version>
+      <Version>0.3.16-beta</Version>
+    </PackageReference>
+    <PackageReference Include="ISUF.UI">
+      <Version>0.3.16-beta</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>
@@ -174,13 +177,6 @@
       <Version>5.1.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="ISUF.UI, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ISUF\src\ISUF.UI\bin\Debug\ISUF.UI.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

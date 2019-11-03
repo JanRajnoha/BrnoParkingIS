@@ -12,7 +12,7 @@ namespace BrnoParkingIS.ViewModels
     {
         public MainPageViewModel() : base(App.Current)
         {
-            
+            ShowMinorUpdate = true;
         }
     }
 }

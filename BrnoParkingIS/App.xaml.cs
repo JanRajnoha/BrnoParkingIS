@@ -5,6 +5,7 @@ using ISUF.Storage.DatabaseAccess;
 using ISUF.Storage.Manager;
 using ISUF.UI.App;
 using ISUF.UI.Controls;
+using ISUF.UI.Design;
 using ISUF.UI.Modules;
 using ISUF.UI.Views;
 using System;
