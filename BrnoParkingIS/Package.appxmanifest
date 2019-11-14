@@ -7,7 +7,7 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="967528a8-f3de-41bf-82e3-610da7ab8aae"
+    Name="JR-BrnoParkingIS"
     Publisher="CN=JR"
     Version="1.0.0.0" />
 

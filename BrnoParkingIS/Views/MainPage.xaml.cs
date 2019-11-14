@@ -22,7 +22,7 @@ namespace BrnoParkingIS.Views
 
         private void MainPageLoading(FrameworkElement sender, object args)
         {
-            mainPageMenu.ItemsSource = App.Current.AppUIModules;
+            //mainPageMenu.ItemsSource = App.Current.AppUIModules;
         }
 
         //protected override void MainPage_Loading(FrameworkElement sender, object args)

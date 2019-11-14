@@ -3,6 +3,8 @@ using BrnoParkingIS.Views;
 using ISUF.Base.Classes;
 using ISUF.Storage.DatabaseAccess;
 using ISUF.Storage.Manager;
+using ISUF.Storage.Modules;
+using ISUF.Storage.Templates;
 using ISUF.UI.App;
 using ISUF.UI.Controls;
 using ISUF.UI.Design;
@@ -52,11 +54,13 @@ namespace BrnoParkingIS
         {
             ModuleManager = new UIModuleManager(typeof(XmlDbAccess));
 
-            var carModule = new UIModule(typeof(Car), typeof(BaseItemManager), "Cars", (Symbol)0xE711, null);
-            var parkingModule = new UIModule(typeof(Parkings), typeof(BaseItemManager), "Parkings", Symbol.BackToWindow, null);
+            var carModule = new UIModule(typeof(Car), typeof(BaseItemManager), "Cars", (Symbol)0xE711, typeof(CarModulePage));
+            var parkingModule = new UIModule(typeof(Parkings), typeof(BaseItemManager), "Parkings", Symbol.BackToWindow, typeof(ParkingModulePage));
+            var userModule = new UserModule(typeof(UserItem), typeof(UserItemManager));
 
             ModuleManager.RegisterModule(carModule);
             ModuleManager.RegisterModule(parkingModule);
+            ModuleManager.RegisterModule(userModule);
         }
 
         public override async Task OnInitializeAsync(IActivatedEventArgs args)

@@ -10,9 +10,9 @@ namespace BrnoParkingIS.ViewModels
 {
     public class MainPageViewModel : MainPageVMBase
     {
-        public MainPageViewModel() : base(App.Current)
+        public MainPageViewModel()
         {
-            ShowMinorUpdate = true;
+            //ShowMinorUpdate = true;
         }
     }
 }
