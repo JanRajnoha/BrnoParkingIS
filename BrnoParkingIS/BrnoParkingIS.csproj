@@ -187,8 +187,8 @@
     <PackageReference Include="ColorCode.UWP">
       <Version>2.0.6</Version>
     </PackageReference>
-    <PackageReference Include="ISUF.Security">
-      <Version>0.3.19-beta</Version>
+    <PackageReference Include="ISUF.UI">
+      <Version>0.3.20-beta</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>
@@ -202,24 +202,6 @@
     <PackageReference Include="Template10">
       <Version>1.1.12</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="ISUF.Base, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ISUF\src\ISUF.Base\bin\Debug\ISUF.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="ISUF.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ISUF\src\ISUF.Interface\bin\Debug\ISUF.Interface.dll</HintPath>
-    </Reference>
-    <Reference Include="ISUF.Storage, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ISUF\src\ISUF.Storage\bin\Debug\ISUF.Storage.dll</HintPath>
-    </Reference>
-    <Reference Include="ISUF.UI, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ISUF\src\ISUF.UI\bin\Debug\ISUF.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
