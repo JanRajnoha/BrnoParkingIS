@@ -120,10 +120,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AddItem.xaml.cs">
+      <DependentUpon>AddItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Car.cs" />
     <Compile Include="Modules\Parkings.cs" />
     <Compile Include="ViewModels\CarViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\CarAddViewModel.cs" />
     <Compile Include="Views\CarModulePage.xaml.cs">
       <DependentUpon>CarModulePage.xaml</DependentUpon>
     </Compile>
@@ -158,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\AddItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CarModulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -179,10 +187,7 @@
     <PackageReference Include="ColorCode.UWP">
       <Version>2.0.6</Version>
     </PackageReference>
-    <PackageReference Include="ISUF.Storage">
-      <Version>0.3.19-beta</Version>
-    </PackageReference>
-    <PackageReference Include="ISUF.UI">
+    <PackageReference Include="ISUF.Security">
       <Version>0.3.19-beta</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
@@ -191,6 +196,30 @@
     <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
       <Version>5.1.1</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>10.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Template10">
+      <Version>1.1.12</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ISUF.Base, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ISUF\src\ISUF.Base\bin\Debug\ISUF.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="ISUF.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ISUF\src\ISUF.Interface\bin\Debug\ISUF.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="ISUF.Storage, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ISUF\src\ISUF.Storage\bin\Debug\ISUF.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="ISUF.UI, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ISUF\src\ISUF.UI\bin\Debug\ISUF.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
