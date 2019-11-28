@@ -187,8 +187,11 @@
     <PackageReference Include="ColorCode.UWP">
       <Version>2.0.6</Version>
     </PackageReference>
+    <PackageReference Include="ISUF.Security">
+      <Version>0.3.21-beta</Version>
+    </PackageReference>
     <PackageReference Include="ISUF.UI">
-      <Version>0.3.20-beta</Version>
+      <Version>0.3.21-beta</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>

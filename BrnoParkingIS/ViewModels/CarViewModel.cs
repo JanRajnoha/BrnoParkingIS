@@ -20,7 +20,7 @@ namespace BrnoParkingIS.ViewModels
         {
         }
 
-        public CarViewModel(Type modulePage, SecondaryTile secondaryTile, string itemType) : base(modulePage, secondaryTile, itemType)
+        public CarViewModel(Type modulePage, SecondaryTile secondaryTile) : base(modulePage, secondaryTile)
         {
         }
 
@@ -39,7 +39,7 @@ namespace BrnoParkingIS.ViewModels
             {
                 case addPivotItemName:
 
-                    content = new AddItem(uiModule, typeof(CarAddViewModel), null);
+                    content = new AddItem(uiModule, typeof(CarAddViewModel), Messenger, modulePage);
 
                     if (msg.GetType() == typeof(ItemAddNewMsg))
                     {
@@ -72,7 +72,7 @@ namespace BrnoParkingIS.ViewModels
                     PivotPanes.FirstOrDefault(x => x.Name == paneName).Content = content;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 PivotPanes.Clear();
                 PivotPanes.Insert(0, new PivotItem()
