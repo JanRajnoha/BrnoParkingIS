@@ -43,13 +43,20 @@ namespace BrnoParkingIS.ViewModels
 
                     if (msg.GetType() == typeof(ItemAddNewMsg))
                     {
-                        header = "Add Activity";
+                        header = "Add";
                     }
                     else
                     {
-                        header = "Edit Activity";
+                        header = "Edit";
                     }
 
+                    break;
+
+                case detailPivotItemName:
+
+                    content = new DetailItem(uiModule, typeof(CarAddViewModel), Messenger, modulePage);
+                    
+                    header = "Detail";
                     break;
 
                 default:
@@ -102,17 +109,7 @@ namespace BrnoParkingIS.ViewModels
             }
         }
 
-        protected override void NewItemAdded(ItemAddSavedMsg obj)
-        {
-            throw new NotImplementedException();
-        }
-
         protected override void ShowModal(ShowModalActivationMsg obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override Task UpdateSourceAsync(bool secureChanged = false)
         {
             throw new NotImplementedException();
         }

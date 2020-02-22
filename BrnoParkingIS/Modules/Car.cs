@@ -11,9 +11,19 @@ namespace BrnoParkingIS.Modules
 {
     public class Car : BaseItem
     {
-        [UIParams(DateTimeMode = DatePickerMode.Date, LabelDescription = "Date")]
-        public DateTime Date { get; set; }
-        [UIParams(DateTimeMode = DatePickerMode.Time, LabelDescription = "Time")]
-        public DateTime Time { get; set; }
+        [UIParams(DateTimeMode = DatePickerMode.Date, LabelDescription = "Date", UIOrder = 3)]
+        public DateTime Date { get; set; } = DateTime.Today;
+
+        [UIParams(DateTimeMode = DatePickerMode.Time, LabelDescription = "Time", UIOrder = 4)]
+        public DateTime Time { get; set; } = DateTime.Now;
+
+        [LinkedTable(LinkedTableType = typeof(Parkings))]
+        [UIParams(LabelDescription = "Parking selector", UIOrder = 4)]
+        public int Parking { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

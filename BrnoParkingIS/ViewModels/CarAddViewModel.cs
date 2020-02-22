@@ -2,6 +2,7 @@ using BrnoParkingIS.Modules;
 using ISUF.Base.Classes;
 using ISUF.Base.Messages;
 using ISUF.UI.ViewModel;
+using ISUF.UI.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,23 +14,17 @@ namespace BrnoParkingIS.ViewModels
 {
     public class CarAddViewModel : ModuleAddVMBase<Car>
     {
-        public CarAddViewModel(Messenger messenger, Type modulePage) : base(messenger, modulePage)
+        public CarAddViewModel(Messenger messenger, Type modulePage, ModuleAddControlBase form) : base(messenger, modulePage, form)
         {
 
         }
 
-        public override DelegateCommand<Car> SaveItem { get => new DelegateCommand<Car>((Car car) => { }); set => new DelegateCommand<Car>((Car car) => { }); }
-
-        public override DelegateCommand<Car> SaveItemClose { get => new DelegateCommand<Car>((Car car) => { }); set => new DelegateCommand<Car>((Car car) => { }); }
-
         protected override void AddNewItem(ItemAddNewMsg obj)
         {
-            if (obj != null)
-                if (obj.ItemType != typeof(Car))
-                    return;
+            if (obj != null && obj.ItemType != typeof(Car))
+                return;
 
-            DetailItem = new Car();
-            RaisePropertyChanged(nameof(DetailItem));
+            AddEditItem = new Car();
         }
 
         protected override void SelectedItemChanged(ItemSelectedAddMsg obj)
