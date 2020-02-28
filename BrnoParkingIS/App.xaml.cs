@@ -55,7 +55,7 @@ namespace BrnoParkingIS
             ModuleManager = new UIModuleManager(typeof(XmlDbAccess));
 
             var carModule = new UIModule(typeof(Car), typeof(BaseItemManager), "Cars", (Symbol)0xE804, typeof(CarModulePage));
-            var parkingModule = new UIModule(typeof(Parkings), typeof(BaseItemManager), "Parkings", (Symbol)0xF161, typeof(ParkingModulePage));
+            var parkingModule = new UIModule(typeof(Parking), typeof(BaseItemManager), "Parkings", (Symbol)0xF161, typeof(ParkingModulePage));
             var userModule = new UserModule(typeof(UserItem), typeof(UserItemManager));
 
             ModuleManager.RegisterModule(carModule);

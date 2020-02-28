@@ -7,23 +7,23 @@ using System;
 
 namespace BrnoParkingIS.ViewModels
 {
-    public class CarAddViewModel : ModuleAddVMBase<Car>
+    public class ParkingAddViewModel : ModuleAddVMBase<Parking>
     {
-        public CarAddViewModel(Messenger messenger, Type modulePage, ModuleAddControlBase form) : base(messenger, modulePage, form)
+        public ParkingAddViewModel(Messenger messenger, Type modulePage, ModuleAddControlBase form) : base(messenger, modulePage, form)
         {
 
         }
 
         protected override void AddNewItem(ItemAddNewMsg obj)
         {
-            if (obj != null && obj.ItemType != typeof(Car))
+            if (obj != null && obj.ItemType != typeof(Parking))
                 return;
 
-            AddEditItem = new Car();
+            AddEditItem = new Parking();
         }
 
         protected override void SelectedItemChanged(ItemSelectedAddMsg obj)
         {
         }
     }
-}
+    }

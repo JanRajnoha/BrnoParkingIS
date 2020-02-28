@@ -12,13 +12,13 @@ using Windows.UI.Xaml.Controls;
 
 namespace BrnoParkingIS.ViewModels
 {
-    public class CarViewModel : ModuleVMBase<Car>
+    public class ParkingViewModel : ModuleVMBase<Parking>
     {
-        public CarViewModel(Type modulePage) : base(modulePage)
+        public ParkingViewModel(Type modulePage) : base(modulePage)
         {
         }
 
-        public CarViewModel(Type modulePage, SecondaryTile secondaryTile) : base(modulePage, secondaryTile)
+        public ParkingViewModel(Type modulePage, SecondaryTile secondaryTile) : base(modulePage, secondaryTile)
         {
         }
 
@@ -37,7 +37,7 @@ namespace BrnoParkingIS.ViewModels
             {
                 case addPivotItemName:
 
-                    content = new AddItem(uiModule, typeof(CarAddViewModel), Messenger, modulePage);
+                    content = new AddItem(uiModule, typeof(ParkingAddViewModel), Messenger, modulePage);
 
                     if (msg.GetType() == typeof(ItemAddNewMsg))
                     {
@@ -52,8 +52,8 @@ namespace BrnoParkingIS.ViewModels
 
                 case detailPivotItemName:
 
-                    content = new DetailItem(uiModule, typeof(CarAddViewModel), Messenger, modulePage);
-                    
+                    content = new DetailItem(uiModule, typeof(ParkingAddViewModel), Messenger, modulePage);
+
                     header = "Detail";
                     break;
 

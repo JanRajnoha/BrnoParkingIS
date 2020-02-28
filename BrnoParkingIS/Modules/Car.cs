@@ -2,28 +2,37 @@ using ISUF.Base.Attributes;
 using ISUF.Base.Enum;
 using ISUF.Base.Template;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrnoParkingIS.Modules
 {
     public class Car : BaseItem
     {
+        [UIIgnore]
+        public new string Description { get; set; }
+        [UIIgnore]
+        public new string Name { get; set; }
+        [UIIgnore]
+        public new bool Secured { get; set; }
+
         [UIParams(DateTimeMode = DatePickerMode.Date, LabelDescription = "Date", UIOrder = 3)]
         public DateTime Date { get; set; } = DateTime.Today;
 
         [UIParams(DateTimeMode = DatePickerMode.Time, LabelDescription = "Time", UIOrder = 4)]
         public DateTime Time { get; set; } = DateTime.Now;
 
-        [LinkedTable(LinkedTableType = typeof(Parkings))]
-        [UIParams(LabelDescription = "Parking selector", UIOrder = 4)]
+        [UIParams(UIOrder = 5)]
+        public string Manufacturer { get; set; }
+
+        [UIParams(UIOrder = 6)]
+        public string SPZ { get; set; }
+
+        [LinkedTable(LinkedTableType = typeof(Parking))]
+        [UIParams(LabelDescription = "Parking selector", UIOrder = 7)]
         public int Parking { get; set; }
 
         public override string ToString()
         {
-            return Name;
+            return Manufacturer + " - " + SPZ;
         }
     }
 }

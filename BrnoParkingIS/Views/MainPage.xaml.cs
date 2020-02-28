@@ -1,4 +1,6 @@
 ﻿using BrnoParkingIS.ViewModels;
+using ISUF.Base.Enum;
+using ISUF.UI.Controls;
 using ISUF.UI.Views;
 using System;
 using Windows.UI.Xaml;
