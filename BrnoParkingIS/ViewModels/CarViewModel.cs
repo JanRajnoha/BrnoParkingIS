@@ -52,7 +52,7 @@ namespace BrnoParkingIS.ViewModels
 
                 case detailPivotItemName:
 
-                    content = new DetailItem(uiModule, typeof(CarAddViewModel), Messenger, modulePage);
+                    content = new DetailItem(uiModule, typeof(CarDetailViewModel), Messenger, modulePage);
                     
                     header = "Detail";
                     break;

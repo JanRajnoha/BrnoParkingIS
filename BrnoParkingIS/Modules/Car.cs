@@ -28,7 +28,7 @@ namespace BrnoParkingIS.Modules
 
         [LinkedTable(LinkedTableType = typeof(Parking))]
         [UIParams(LabelDescription = "Parking selector", UIOrder = 7)]
-        public int Parking { get; set; }
+        public int Parking { get; set; } = -1;
 
         public override string ToString()
         {

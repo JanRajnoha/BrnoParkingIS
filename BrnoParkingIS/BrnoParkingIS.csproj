@@ -128,10 +128,12 @@
     </Compile>
     <Compile Include="Modules\Car.cs" />
     <Compile Include="Modules\Parking.cs" />
+    <Compile Include="ViewModels\CarDetailViewModel.cs" />
     <Compile Include="ViewModels\CarViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\CarAddViewModel.cs" />
     <Compile Include="ViewModels\ParkingAddViewModel.cs" />
+    <Compile Include="ViewModels\ParkingDetailViewModel.cs" />
     <Compile Include="ViewModels\ParkingViewModel.cs" />
     <Compile Include="Views\CarModulePage.xaml.cs">
       <DependentUpon>CarModulePage.xaml</DependentUpon>
@@ -197,10 +199,10 @@
       <Version>2.0.6</Version>
     </PackageReference>
     <PackageReference Include="ISUF.Security">
-      <Version>0.4.2-beta</Version>
+      <Version>0.4.4-beta</Version>
     </PackageReference>
     <PackageReference Include="ISUF.UI">
-      <Version>0.4.2-beta</Version>
+      <Version>0.4.4-beta</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>

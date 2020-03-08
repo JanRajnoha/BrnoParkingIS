@@ -21,9 +21,5 @@ namespace BrnoParkingIS.ViewModels
 
             AddEditItem = new Car();
         }
-
-        protected override void SelectedItemChanged(ItemSelectedAddMsg obj)
-        {
-        }
     }
 }
