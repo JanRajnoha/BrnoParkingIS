@@ -1,12 +1,31 @@
-﻿using System;
+﻿using BrnoParkingIS.Modules;
+using BrnoParkingIS.Views;
+using ISUF.Base.Classes;
+using ISUF.Storage.DatabaseAccess;
+using ISUF.Storage.Manager;
+using ISUF.Storage.Modules;
+using ISUF.Storage.Templates;
+using ISUF.UI.App;
+using ISUF.UI.Controls;
+using ISUF.UI.Design;
+using ISUF.UI.Modules;
+using ISUF.UI.Views;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using Template10.Common;
+using Template10.Controls;
+using Template10.Services.NavigationService;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -20,16 +39,35 @@ namespace BrnoParkingIS
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    sealed partial class App : Application
+    public sealed partial class App : ApplicationBase
     {
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
-        public App()
+        public App() : base(Package.Current.DisplayName + (Constants.Instance.BetaMode ? " - Beta version" : ""), typeof(Shell), typeof(MainPage), null)
         {
-            this.InitializeComponent();
-            this.Suspending += OnSuspending;
+            InitializeComponent();
+        }
+
+        public override void RegisterModules()
+        {
+            ModuleManager = new UIModuleManager(typeof(XmlDbAccess));
+
+            var carModule = new UIModule(typeof(Car), typeof(BaseItemManager), "Cars", (Symbol)0xE804, typeof(CarModulePage));
+            var parkingModule = new UIModule(typeof(Parking), typeof(BaseItemManager), "Parkings", (Symbol)0xF161, typeof(ParkingModulePage));
+            var userModule = new UserModule(typeof(UserItem), typeof(UserItemManager));
+
+            ModuleManager.RegisterModule(carModule);
+            ModuleManager.RegisterModule(parkingModule);
+            ModuleManager.RegisterModule(userModule);
+        }
+
+        public override async Task OnInitializeAsync(IActivatedEventArgs args)
+        {
+            await base.OnInitializeAsync(args);
+
+            await Task.CompletedTask;
         }
 
         /// <summary>
@@ -78,7 +116,7 @@ namespace BrnoParkingIS
         /// </summary>
         /// <param name="sender">The Frame which failed navigation</param>
         /// <param name="e">Details about the navigation failure</param>
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        protected void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
@@ -95,6 +133,12 @@ namespace BrnoParkingIS
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        public override async Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
+        {
+            await NavigationService.NavigateAsync(typeof(MainPage));
+            await Task.CompletedTask;
         }
     }
 }
